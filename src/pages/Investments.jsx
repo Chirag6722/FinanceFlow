@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, TrendingUp, TrendingDown, RefreshCw, Edit2, Trash2, DollarSign } from 'lucide-react';
+import { Plus, TrendingUp, TrendingDown, RefreshCw, Edit2, Trash2, IndianRupee } from 'lucide-react';
 import { useInvestments } from '../context/InvestmentContext';
 import { InvestmentModal } from '../components/Investments/InvestmentModal';
 
@@ -84,7 +84,7 @@ const Investments = () => {
                 <div className="glass p-6 rounded-2xl border border-black/5 dark:border-white/5">
                     <div className="flex items-center justify-between mb-2">
                         <p className="text-sm text-text-secondary">Total Invested</p>
-                        <DollarSign className="w-5 h-5 text-indigo-600" />
+                        <IndianRupee className="w-5 h-5 text-indigo-600" />
                     </div>
                     <p className="text-2xl font-bold text-text-primary">₹{stats.totalInvested.toFixed(2)}</p>
                 </div>

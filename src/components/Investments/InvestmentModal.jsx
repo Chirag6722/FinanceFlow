@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, TrendingUp, Calendar, Hash, DollarSign, FileText } from 'lucide-react';
+import { X, TrendingUp, Calendar, Hash, IndianRupee, FileText } from 'lucide-react';
 import { useInvestments } from '../../context/InvestmentContext';
 
 const INVESTMENT_TYPES = [

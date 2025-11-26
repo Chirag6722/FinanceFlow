@@ -10,10 +10,10 @@ const CustomTooltip = ({ active, payload, label }) => {
                 <p className="text-text-secondary text-sm mb-2">{label}</p>
                 <div className="space-y-1">
                     <p className="text-sm font-bold" style={{ color: '#10b981' }}>
-                        Income: ${payload[0]?.value?.toFixed(2) || '0.00'}
+                        Income: ₹{payload[0]?.value?.toFixed(2) || '0.00'}
                     </p>
                     <p className="text-sm font-bold" style={{ color: '#ef4444' }}>
-                        Expense: ${payload[1]?.value?.toFixed(2) || '0.00'}
+                        Expense: ₹{payload[1]?.value?.toFixed(2) || '0.00'}
                     </p>
                 </div>
             </div>
@@ -142,7 +142,7 @@ const ExpenseChart = () => {
                                 axisLine={false}
                                 tickLine={false}
                                 tick={{ fill: '#9ca3af', fontSize: 12 }}
-                                tickFormatter={(value) => `$${value}`}
+                                tickFormatter={(value) => `₹${value}`}
                             />
                             <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(128,128,128,0.2)' }} />
                             <Area

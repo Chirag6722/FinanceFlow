@@ -12,7 +12,7 @@ const CustomTooltip = ({ active, payload, label }) => {
                 <p className="text-text-secondary text-sm mb-2">{label}</p>
                 {payload.map((entry, index) => (
                     <p key={index} className="text-sm font-bold" style={{ color: entry.color }}>
-                        {entry.name}: ${entry.value}
+                        {entry.name}: ₹{entry.value}
                     </p>
                 ))}
             </div>
@@ -174,7 +174,7 @@ const Analytics = () => {
                                         axisLine={false}
                                         tickLine={false}
                                         tick={{ fill: '#9ca3af', fontSize: 12 }}
-                                        tickFormatter={(value) => `$${value}`}
+                                        tickFormatter={(value) => `₹${value}`}
                                     />
                                     <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(128,128,128,0.05)' }} />
                                     <Legend />
@@ -196,7 +196,7 @@ const Analytics = () => {
                 <div className="glass p-6 rounded-2xl border border-black/5 dark:border-white/5">
                     <p className="text-text-secondary text-sm mb-1">Average Monthly Spend</p>
                     <h4 className="text-2xl font-bold text-text-primary">
-                        ${stats.avgMonthlySpend.toFixed(2)}
+                        ₹{stats.avgMonthlySpend.toFixed(2)}
                     </h4>
                     <p className="text-xs text-text-secondary mt-2">Based on last {monthlyData.length} months</p>
                 </div>

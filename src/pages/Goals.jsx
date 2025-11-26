@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, Edit2, Trash2, Target, TrendingUp, DollarSign } from 'lucide-react';
+import { Plus, Edit2, Trash2, Target, TrendingUp, IndianRupee } from 'lucide-react';
 import { useGoals } from '../context/GoalContext';
 import { GoalModal } from '../components/Goals/GoalModal';
 
@@ -72,7 +72,7 @@ const Goals = () => {
                 <div className="glass p-6 rounded-2xl border border-black/5 dark:border-white/5">
                     <div className="flex items-center justify-between mb-2">
                         <p className="text-sm text-text-secondary">Total Saved</p>
-                        <DollarSign className="w-5 h-5 text-green-600" />
+                        <IndianRupee className="w-5 h-5 text-green-600" />
                     </div>
                     <p className="text-2xl font-bold text-green-600">₹{totalSaved.toFixed(2)}</p>
                 </div>

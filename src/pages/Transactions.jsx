@@ -134,7 +134,7 @@ const Transactions = () => {
                                         "py-4 px-6 text-right font-bold",
                                         t.type === 'income' ? "text-secondary" : "text-text-primary"
                                     )}>
-                                        {t.type === 'income' ? '+' : '-'}${t.amount}
+                                        {t.type === 'income' ? '+' : '-'}₹{t.amount}
                                     </td>
                                     <td className="py-4 px-6 text-center">
                                         <div className="relative group/menu">

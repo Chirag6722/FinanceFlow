@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrendingUp, TrendingDown, DollarSign, Calendar } from 'lucide-react';
+import { TrendingUp, TrendingDown, IndianRupee, Calendar } from 'lucide-react';
 import { useTransactions } from '../context/TransactionContext';
 import { AreaChart, Area, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
@@ -56,7 +56,7 @@ const Insights = () => {
                 <div className="glass p-6 rounded-2xl border border-black/5 dark:border-white/5">
                     <div className="flex items-center justify-between mb-2">
                         <p className="text-sm text-text-secondary">Avg. Daily Spending</p>
-                        <DollarSign className="w-5 h-5 text-indigo-600" />
+                        <IndianRupee className="w-5 h-5 text-indigo-600" />
                     </div>
                     <p className="text-2xl font-bold text-text-primary">₹{avgDailySpending.toFixed(2)}</p>
                 </div>
