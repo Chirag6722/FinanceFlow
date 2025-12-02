@@ -247,14 +247,38 @@ const TransactionModal = ({ isOpen, onClose, onSave, transaction = null }) => {
                                 className="w-full bg-background border border-white/10 rounded-xl pl-10 pr-4 py-3 text-text-primary focus:outline-none focus:border-primary/50 transition-colors appearance-none"
                             >
                                 <option value="" disabled>Select Category</option>
-                                <option value="Food">Food & Dining</option>
-                                <option value="Shopping">Shopping</option>
-                                <option value="Transport">Transport</option>
-                                <option value="Bills">Bills & Utilities</option>
-                                <option value="Entertainment">Entertainment</option>
-                                <option value="Salary">Salary</option>
-                                <option value="Freelance">Freelance</option>
-                                <option value="Other">Other</option>
+                                {formData.type === 'income' ? (
+                                    <>
+                                        <option value="Salary">Salary</option>
+                                        <option value="Freelance">Freelance</option>
+                                        <option value="Business">Business</option>
+                                        <option value="Investment">Investment Returns</option>
+                                        <option value="Rental">Rental Income</option>
+                                        <option value="Refund">Refund</option>
+                                        <option value="Bonus">Bonus</option>
+                                        <option value="Gift">Gift</option>
+                                        <option value="Other">Other</option>
+                                    </>
+                                ) : (
+                                    <>
+                                        <option value="Food">Food & Dining</option>
+                                        <option value="Groceries">Groceries</option>
+                                        <option value="Shopping">Shopping</option>
+                                        <option value="Transport">Transport</option>
+                                        <option value="Bills">Bills & Utilities</option>
+                                        <option value="Rent">Rent & Housing</option>
+                                        <option value="Entertainment">Entertainment</option>
+                                        <option value="Health">Health & Medical</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Travel">Travel</option>
+                                        <option value="Insurance">Insurance</option>
+                                        <option value="Tax">Tax</option>
+                                        <option value="Investment">Investment</option>
+                                        <option value="Gift">Gifts & Donations</option>
+                                        <option value="Personal">Personal Care</option>
+                                        <option value="Other">Other</option>
+                                    </>
+                                )}
                             </select>
                         </div>
                     </div>

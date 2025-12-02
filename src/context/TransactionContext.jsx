@@ -146,20 +146,29 @@ export function TransactionProvider({ children }) {
     };
 
     const getStats = () => {
-        // Only count transactions that are NOT linked to cards
-        // (card-linked transactions are already reflected in card balances)
-        const income = transactions
+        // Calculate total income and expense across ALL transactions for display
+        const totalIncome = transactions
+            .filter(t => t.type === 'income')
+            .reduce((sum, t) => sum + parseFloat(t.amount || 0), 0);
+
+        const totalExpense = transactions
+            .filter(t => t.type === 'expense')
+            .reduce((sum, t) => sum + parseFloat(t.amount || 0), 0);
+
+        // Calculate floating balance (transactions not linked to any card)
+        // This is needed for the Total Balance calculation in Dashboard (Card Balances + Floating Balance)
+        const floatingIncome = transactions
             .filter(t => t.type === 'income' && !t.cardId)
             .reduce((sum, t) => sum + parseFloat(t.amount || 0), 0);
 
-        const expense = transactions
+        const floatingExpense = transactions
             .filter(t => t.type === 'expense' && !t.cardId)
             .reduce((sum, t) => sum + parseFloat(t.amount || 0), 0);
 
         return {
-            income,
-            expense,
-            balance: income - expense
+            income: totalIncome,
+            expense: totalExpense,
+            balance: floatingIncome - floatingExpense
         };
     };
 
